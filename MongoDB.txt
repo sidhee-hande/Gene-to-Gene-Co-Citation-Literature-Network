@@ -1,0 +1,7 @@
+db.advanced_queries.createIndex( { "MedlineCitation.Article.ArticleTitle" : "text", "MedlineCitation.Article.Abstract.AbstractText":"text" } )
+
+ db.advanced_queries.find( { $text: { $search: "egfr" } } ) 
+
+ db.advanced_queries.find( { $text: { $search: "egfr" } },{"MedlineCitation.Article.ArticleTitle": 1} )
+
+ db.advanced_queries.find( { $text: { $search: "egfr" } },{"MedlineCitation.Abstract.AbstractText": 1} )
